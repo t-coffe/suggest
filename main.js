@@ -20,7 +20,6 @@ input.addEventListener('input', (e)=> {
   //console.log(e.target.value); 
   // console.log(input.value); 
   const results = search(e.target.value, mots);
-  console.log(results);
   let liste = "";
   for (let i = 0; i < results.length; i++) {
     liste += "<li>" + results[i] + "</li>";
@@ -42,8 +41,8 @@ const search = (str, wordList)=>{
     const item = wordList[i];
     if (item.toLowerCase().startsWith(str.toLowerCase()) ) {
       results.push(item);
-    }
-    if (item.toUpperCase().startsWith(str.toUpperCase)) {
+    } else
+    if (item.toUpperCase().startsWith(str.toUpperCase())) {
       results.push(item);
     }
   }
